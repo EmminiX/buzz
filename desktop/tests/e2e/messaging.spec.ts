@@ -1700,7 +1700,7 @@ test("day divider appears in timeline", async ({ page }) => {
   await expect(page.getByTestId("chat-title")).toHaveText("general");
 
   await expect(page.getByTestId("message-timeline")).toContainText(
-    "Welcome to #general",
+    "Welcome to general",
   );
   await expect(page.getByTestId("message-timeline-day-divider")).toBeVisible();
 });
@@ -2058,7 +2058,7 @@ test("opens a single-level thread panel with inline expansion", async ({
   await page.getByTestId("channel-general").click();
   await expect(page.getByTestId("chat-title")).toHaveText("general");
   await expect(page.getByTestId("message-timeline")).toContainText(
-    "Welcome to #general",
+    "Welcome to general",
   );
 
   const timeline = page.getByTestId("message-timeline");
@@ -2081,7 +2081,7 @@ test("opens a single-level thread panel with inline expansion", async ({
   await rootMessage.getByRole("button", { name: "Reply" }).click();
   await expect(threadPanel).toBeVisible();
   await expect(threadPanel.getByTestId("message-thread-head")).toContainText(
-    "Welcome to #general",
+    "Welcome to general",
   );
 
   await threadComposer.fill(firstReply);
@@ -2227,7 +2227,7 @@ test("opens a single-level thread panel with inline expansion", async ({
   await rootSummaryRow.click();
   await expect(threadPanel).toBeVisible();
   await expect(threadPanel.getByTestId("message-thread-head")).toContainText(
-    "Welcome to #general",
+    "Welcome to general",
   );
 
   const firstReplyRow = threadReplies
@@ -2238,7 +2238,7 @@ test("opens a single-level thread panel with inline expansion", async ({
   await firstReplyRow.getByRole("button", { name: "Reply" }).click();
 
   await expect(threadPanel.getByTestId("message-thread-head")).toContainText(
-    "Welcome to #general",
+    "Welcome to general",
   );
   await expect(threadPanel.getByTestId("message-thread-back")).toHaveCount(0);
 
